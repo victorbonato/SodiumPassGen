@@ -46,11 +46,11 @@ On Linux:
 
 ## Example usage:
 
-![example usage](https://github.com/victorbonato/SodiumPassGen/tree/main/res/images/image.png?raw=true)
+![Alt text](https://github.com/victorbonato/SodiumPassGen/tree/main/res/images/image.png?raw=true)
 
 ## Authors
 
-  - **Victor Bonato** -
+  - **Victor Bonato** -\
     [github](https://github.com/victorbonato)\
     [mail](victorbonatoit@gmail.com)
 
