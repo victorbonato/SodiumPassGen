@@ -46,12 +46,12 @@ On Linux:
 
 ## Example usage:
 
-![example usage](https://github.com/victorbonato/SodiumPassGen/edit/main/rsc/image.png)
+![example usage](https://github.com/victorbonato/SodiumPassGen/edit/main/rsc/image.png?raw=true)
 
 ## Authors
 
   - **Victor Bonato** -
-    [github](https://github.com/victorbonato)\n
+    [github](https://github.com/victorbonato)\
     [mail](victorbonatoit@gmail.com)
 
 ## Acknowledgments
