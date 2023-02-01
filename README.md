@@ -40,11 +40,11 @@ or
 On Linux:
 
     ./sogen length=*password_length* type=*types_of_characters_allowed*
-$ ./sogen.exe length=27 type=ANS
+
 
 ## Example usage:
 
-    ./sogen length=*password_length* type=*types_of_characters_allowed*
+    $ .\sogen.exe length=27 type=ANS
 
 <img src="https://github.com/victorbonato/SodiumPassGen/main/res/images/image.png" alt="Example usage" title="Example Usage">
 
