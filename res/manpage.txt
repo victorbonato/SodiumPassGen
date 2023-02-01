@@ -1,13 +1,13 @@
 Usage: ./spg.exe [OPTIONS]
-example usage: ./spg.exe -l 17 -c AS 
-The command above would generate a 17 char password containing alphabetic and special characters.
+example usage: ./spg.exe length=50 type=AS 
+The command above would generate a 50 char password containing alphabetic and special characters.
 
 OPTIONS include:
                 -h : displays this help page
                 length= specify the length of the desired password.
                 type= specify the possible types of characters your password can contain.
 Types of characters:
-                 X: All possible characters (default)
+                 X : All possible characters (default)
                  A : Alpha characters [a-zA-Z]
                  N : Decimal numeric characters [0-9]
                  S : Special characters [!,@,#,$,%,^,&,*]

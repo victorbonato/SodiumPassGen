@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "sodium.h": "c"
+        "sodium.h": "c",
+        "stdio.h": "c",
+        "ctype.h": "c",
+        "stdlib.h": "c",
+        "header.h": "c",
+        "declarations.h": "c"
     }
 }
