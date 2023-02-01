@@ -27,9 +27,6 @@ Compile it (this example uses gcc):
 
     $ cd src && gcc main.c filterArgv.c interpreters.c generateRandomChar.c print.c -lsodium -o ../sogen.exe && cd ..
 
-End with an example of getting some data out of the system or using it
-for a little demo
-
 ## Using it
 
 After building the executable, on the current directory:
