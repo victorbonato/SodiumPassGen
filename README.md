@@ -46,7 +46,7 @@ On Linux:
 
 ## Example usage:
 
-![example usage](https://github.com/victorbonato/SodiumPassGen/edit/main/rsc/image.png?raw=true)
+![example usage](https://github.com/victorbonato/SodiumPassGen/tree/main/res/images/image.png?raw=true)
 
 ## Authors
 
