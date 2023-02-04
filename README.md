@@ -50,7 +50,7 @@ On Linux:
 
 To get help on options:
 
-    ./sogen -h
+    .\sogen.exe -h
 
 ## Authors
 
