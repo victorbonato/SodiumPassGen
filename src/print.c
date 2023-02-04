@@ -28,7 +28,7 @@ void displayPassword(char* passwd, size_t length) {
 // Display the help message contained in the manpage.txt fle
 void displayHelpPage(void) {
     // Open file stream
-    FILE* fptr = fopen("../res/manpage.txt", "r");
+    FILE* fptr = fopen("../res/helppage.txt", "r");
     // Checks for errors upon handling it
     if (!fptr) {
         printf("There was an error opening the help page file.\n");
