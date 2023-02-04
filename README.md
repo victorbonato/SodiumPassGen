@@ -33,13 +33,13 @@ After building the executable, on the current directory:
 
 On Windows:
 
-    .\sogen.exe length=*password_length* type=*types_of_characters_allowed*
+    .\sogen.exe length=<password_length> type=<types_of_characters_allowed>
 
 or
 
 On Linux:
 
-    ./sogen length=*password_length* type=*types_of_characters_allowed*
+    ./sogen length=<password_length> type=<types_of_characters_allowed>
 
 
 ## Example usage:
