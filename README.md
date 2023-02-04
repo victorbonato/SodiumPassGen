@@ -55,8 +55,8 @@ To get help on options:
 ## Authors
 
   - **Victor Bonato** -\
-    [github](https://github.com/victorbonato)\
-    [mail](victorbonatoit@gmail.com)
+    Github: [victorbonato](https://github.com/victorbonato)\
+    Contact mail: [victorbonatoit@gmail.com](victorbonatoit@gmail.com)
 
 ## Acknowledgments
 
