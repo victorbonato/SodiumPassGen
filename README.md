@@ -21,36 +21,28 @@ After installing libsodium and making sure it's available to your compiler, clon
 
 Clone this repo:
 
-    $ git clone https://github.com/victorbonato/SodiumPassGen.git
+    $ git clone https://github.com/victorbonato/SodiumPassGen.git && cd SodiumPassGen
 
 Compile it (this example uses gcc):
 
-    $ cd src && gcc main.c filterArgv.c interpreters.c generateRandomChar.c print.c -lsodium -o ../sogen.exe && cd ..
-
+    $ make
+    
 ## Using it
 
 After building the executable, on the current directory:
-
-On Windows:
-
-    .\sogen.exe length=<password_length> type=<types_of_characters_allowed>
-
-or
-
-On Linux:
 
     ./sogen length=<password_length> type=<types_of_characters_allowed>
 
 
 ## Example usage:
 
-    $ .\sogen.exe length=27 type=ANS
+    $ ./sogen length=27 type=ANS
 
 <img src="https://github.com/victorbonato/SodiumPassGen/main/res/images/image.png" alt="Example usage" title="Example Usage">
 
 To get help on options:
 
-    .\sogen.exe -h
+    ./sogen -h
 
 ## Authors
 
