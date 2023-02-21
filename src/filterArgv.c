@@ -15,31 +15,46 @@ char** filterArgv(int argc, char *argv[]) {
     
     // Allocates space for a 2d array(an array of pointers that points to pointers, and these point to strings)
     // A pointer for 2 * 3 bytes spaces
-    char* flag_value = calloc(2, 3);
+    //char* flag_value = malloc(6);
+    //char* flag_value = calloc(2,3);
 
-    // A pointer to a space of 2 char pointers
+    // A pointer to a space of 2 char pointers, each pointing to 3 byte strings
     char** flag_values = malloc(2 * sizeof(char*));
-
+    for (int i = 0; i < 2; i++){
+        flag_values[i] = malloc(4); 
+	}
+     
     // A loop to find keys and values in the argument
     for (int i = 1; i < argc; i++){
 
         // Extract the value from argument, the right side of '='
         char* value = strrchr(argv[i], '=') + 1;
-
-        // Compare the key argument, left side of '=', if it matches valid key arguments, add it to the return array;
+       
+       // Compare the key argument, left side of '=', if it matches valid key arguments, add it to the return array;
         // If -h flag detected, display and quit
         if ((strcmp(strtok(argv[i], "="), "-h")) == 0){
             displayHelpPage();
             exit(1);
             // If length detected add it to the return 2d array on index 0
         } else if (((strcmp(strtok(argv[i], "="), "length")) == 0) && !l){
-            flag_value = value;
-            flag_values[0] = flag_value;      //Insert length string into flag_values[0] 
+	    if (strlen(value) <= 3){
+                memcpy(flag_values[0], value, 4);
+	    } else {
+                fprintf(stderr,"Invalid length.\n");
+		exit(1);
+	    }
+            //flag_values[0] = value;      //Insert length string into flag_values[0] 
             l = true;
             // If type detected add it to the return 2d array on index 1
         } else if (((strcmp(strtok(argv[i], "="), "type")) == 0) && !t){
-            flag_value = value;
-            flag_values[1] = flag_value;      //Insert types string into flag_values[1]
+	    if (strlen(value) <= 3){
+                memcpy(flag_values[1], value, 3);	
+	    } else {
+                fprintf(stderr, "Invalid types of characters\n");
+		exit(1);
+	    }
+
+            //flag_values[1] = value;      //Insert types string into flag_values[1]
             t = true;
             // If the option is not valid, display the not valid option to stderr and quit
         } else {
@@ -47,7 +62,7 @@ char** filterArgv(int argc, char *argv[]) {
             exit(1);
         }
         }
-        
+
         // If mandatory options were not provided, set to default value, print to stderr and continue
         if (!l) {
             flag_values[0] = "40";
@@ -56,7 +71,7 @@ char** filterArgv(int argc, char *argv[]) {
             flag_values[1] = "X";
             fprintf(stderr,"No possible chracters provided, using X(all characters) as default. use ./spg.exe -h to see options\n");
         }
-
+        
         // Return the 2d array pointer
         return flag_values;
     }

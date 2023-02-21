@@ -6,7 +6,7 @@ int interpretLength(char* argstring) {
     if (length != 0 && length > 7 && length < 100){
         return length;
     } else {
-        fprintf(stderr, "Invalid length provided, please enter a password length between 8-99");
+        fprintf(stderr, "Invalid length provided, please enter a password length between 8-99\n");
         exit(1);
     }
     
@@ -53,22 +53,24 @@ char* interpretType(char* type){
     // If S(special) characters were selected, reallocate more 8 bytes (8 special characters) to the address pointed by finalChars and copy the characters to it
     if (S) {
         finalChars = realloc(finalChars, possibilities + 8);
-        memcpy(finalChars, possible, possibilities + 8);
+        memcpy(finalChars, possible, 8);
         possibilities += 8;
     } 
 
     // If A(Alpha) characters were selected, reallocate more 52 bytes (26 uppercase and 26 lowercase) to the address pointed by finalChars and copy the characters to it
     if (A) {
         finalChars = realloc(finalChars, possibilities + 52);
-        memcpy(finalChars + possibilities, possible + 8, possibilities + 52);
+        memcpy(finalChars + possibilities, possible + 8, 52);
         possibilities += 52;
     }
 
     // If N(numeric) characters were selected, reallocate more 10 bytes (0-9) to the address pointed by finalChars and copy the characters to it
     if (N) {
+	printf("Teste n");
         finalChars = realloc(finalChars, possibilities + 10);
-        memcpy(finalChars + possibilities, possible + 60, possibilities + 10);
+        memcpy(finalChars + possibilities, possible + 60, 10);
         possibilities += 10;
+	printf("Teste after n");
         }
 
     // Set the final byte to null, marking a string termination

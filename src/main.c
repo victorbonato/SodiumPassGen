@@ -2,8 +2,12 @@
 
 //quick function for freeing allocated two dimensions arrays
 void destroyArray(char** array){
-    free(*array);
-    free(array);
+    printf("%s %s\n", array[0], array[1]);
+
+    for (int i = 0; i < 2; i++) {
+        free(array[i]);
+    }
+        free(array);
 }
 
 int main (int argc, char* argv[]) {
@@ -20,6 +24,8 @@ int main (int argc, char* argv[]) {
         // Interprets the user input, making the arguments provided make sense
         size_t length = interpretLength(flag_values[0]);
         char* chars = interpretType(flag_values[1]);
+        
+        
 
         // Allocates space in memory for the password
         char password[length];
@@ -34,9 +40,8 @@ int main (int argc, char* argv[]) {
         displayPassword(password, length);
 
         //free memory
-        free(chars);
+	free(chars);
         destroyArray(flag_values);
-
         // End program
         return 0;
 }
