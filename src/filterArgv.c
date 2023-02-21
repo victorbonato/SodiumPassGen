@@ -1,4 +1,6 @@
 #include <declarations.h>
+#include <stdlib.h>
+#include <string.h>
 
 // Identify arguments on argv[] strings and extract it's values to strings, then add the strings to the return 2d array
 char** filterArgv(int argc, char *argv[]) {
@@ -24,7 +26,7 @@ char** filterArgv(int argc, char *argv[]) {
 
         // Extract the value from argument, the right side of '='
         char* value = strrchr(argv[i], '=') + 1;
-       
+
        // Compare the key argument, left side of '=', if it matches valid key arguments, add it to the return array;
         // If -h flag detected, display and quit
         if ((strcmp(strtok(argv[i], "="), "-h")) == 0){
@@ -33,20 +35,22 @@ char** filterArgv(int argc, char *argv[]) {
             // If length detected add it to the return 2d array on index 0
         } else if (((strcmp(strtok(argv[i], "="), "length")) == 0) && !l){
 	    if (strlen(value) <= 3){
-                memcpy(flag_values[0], value, 4);
+                memcpy(flag_values[0], value, 2);
+                flag_values[0][2] = 0;
 	    } else {
                 fprintf(stderr,"Invalid length.\n");
-		exit(1);
+		        exit(1);
 	    }
             //flag_values[0] = value;      //Insert length string into flag_values[0] 
             l = true;
             // If type detected add it to the return 2d array on index 1
         } else if (((strcmp(strtok(argv[i], "="), "type")) == 0) && !t){
-	    if (strlen(value) <= 3){
-                memcpy(flag_values[1], value, 3);	
+        if (strlen(value) <= 3){
+                memcpy(flag_values[1], value, strlen(value));
+                flag_values[1][strlen(value)] = 0;	
 	    } else {
                 fprintf(stderr, "Invalid types of characters\n");
-		exit(1);
+		        exit(1);
 	    }
 
             //flag_values[1] = value;      //Insert types string into flag_values[1]
@@ -62,14 +66,16 @@ char** filterArgv(int argc, char *argv[]) {
         if (!l) {
             char* default_l = "40";
             memcpy(flag_values[0], default_l, 2);
+            flag_values[0][2] = 0;
             printf("No length provided, setting password length to the default value 40. use ./sogen -h to see options\n");
         } 
         if (!t) {
             char* default_type = "X";
             memcpy(flag_values[1], default_type, 1);
+            flag_values[1][1] = 0;
             printf("No possible character types provided, using X(all characters) as default. use ./sogen -h to see options\n");
         }
-
+        printf("%s %s\n", flag_values[0], flag_values[1]);
         // Return the 2d array pointer
         return flag_values;
     }
