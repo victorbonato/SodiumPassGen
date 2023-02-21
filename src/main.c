@@ -1,6 +1,7 @@
 #include <declarations.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sodium.h>
 
 //quick function for freeing allocated two dimensions arrays
 void destroyArray(char** array){
