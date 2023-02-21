@@ -1,4 +1,9 @@
 #include <declarations.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
 // Converts the length argument string to an int that can be used to set the password buf size
 int interpretLength(char* argstring) {

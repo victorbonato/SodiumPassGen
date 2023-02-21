@@ -1,6 +1,8 @@
 #include <declarations.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+#include <stdio.h>
 
 // Identify arguments on argv[] strings and extract it's values to strings, then add the strings to the return 2d array
 char** filterArgv(int argc, char *argv[]) {

@@ -1,9 +1,4 @@
 #include <stdio.h>
-#include <sodium.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <ctype.h>
-#include <string.h>
 
 char generateRandomChar(char* chars);
 void displayHelpPage(void);
