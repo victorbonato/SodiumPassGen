@@ -77,7 +77,6 @@ char** filterArgv(int argc, char *argv[]) {
             flag_values[1][1] = 0;
             printf("No possible character types provided, using X(all characters) as default. use ./sogen -h to see options\n");
         }
-        printf("%s %s\n", flag_values[0], flag_values[1]);
         // Return the 2d array pointer
         return flag_values;
     }
