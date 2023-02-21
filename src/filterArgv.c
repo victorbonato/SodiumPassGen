@@ -1,4 +1,4 @@
-#include "declarations.h"
+#include <declarations.h>
 
 // Identify arguments on argv[] strings and extract it's values to strings, then add the strings to the return 2d array
 char** filterArgv(int argc, char *argv[]) {
@@ -12,11 +12,6 @@ char** filterArgv(int argc, char *argv[]) {
     // Declares the bool variables length and type, that inform if the user have provided them or not, if not we're going to set default values, 
     // as C does not provide default parameters
     bool l,t;
-    
-    // Allocates space for a 2d array(an array of pointers that points to pointers, and these point to strings)
-    // A pointer for 2 * 3 bytes spaces
-    //char* flag_value = malloc(6);
-    //char* flag_value = calloc(2,3);
 
     // A pointer to a space of 2 char pointers, each pointing to 3 byte strings
     char** flag_values = malloc(2 * sizeof(char*));
@@ -58,20 +53,23 @@ char** filterArgv(int argc, char *argv[]) {
             t = true;
             // If the option is not valid, display the not valid option to stderr and quit
         } else {
-            fprintf(stderr, "Invalid option: %s\nexample usage: ./spg.exe length=17  type=AS\n", strtok(argv[i], "="));
+            fprintf(stderr, "Invalid option: %s\nexample usage: ./sogen length=17  type=AS\n", strtok(argv[i], "="));
             exit(1);
         }
         }
 
         // If mandatory options were not provided, set to default value, print to stderr and continue
         if (!l) {
-            flag_values[0] = "40";
-            fprintf(stderr,"No length provided, setting password length to the default value 40. use ./spg.exe -h to see options\n");
-        } else if (!t) {
-            flag_values[1] = "X";
-            fprintf(stderr,"No possible chracters provided, using X(all characters) as default. use ./spg.exe -h to see options\n");
+            char* default_l = "40";
+            memcpy(flag_values[0], default_l, 2);
+            printf("No length provided, setting password length to the default value 40. use ./sogen -h to see options\n");
+        } 
+        if (!t) {
+            char* default_type = "X";
+            memcpy(flag_values[1], default_type, 1);
+            printf("No possible character types provided, using X(all characters) as default. use ./sogen -h to see options\n");
         }
-        
+
         // Return the 2d array pointer
         return flag_values;
     }

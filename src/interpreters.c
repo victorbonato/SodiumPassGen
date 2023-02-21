@@ -1,4 +1,4 @@
-#include "declarations.h"
+#include <declarations.h>
 
 // Converts the length argument string to an int that can be used to set the password buf size
 int interpretLength(char* argstring) {
@@ -66,11 +66,9 @@ char* interpretType(char* type){
 
     // If N(numeric) characters were selected, reallocate more 10 bytes (0-9) to the address pointed by finalChars and copy the characters to it
     if (N) {
-	printf("Teste n");
         finalChars = realloc(finalChars, possibilities + 10);
         memcpy(finalChars + possibilities, possible + 60, 10);
         possibilities += 10;
-	printf("Teste after n");
         }
 
     // Set the final byte to null, marking a string termination
