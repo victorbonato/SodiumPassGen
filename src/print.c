@@ -1,5 +1,6 @@
 #include <declarations.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 // Quick function for printing dashes, making a line
 void printDashes(size_t amount) {
