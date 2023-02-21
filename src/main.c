@@ -1,9 +1,7 @@
-#include "declarations.h"
+#include <declarations.h>
 
 //quick function for freeing allocated two dimensions arrays
 void destroyArray(char** array){
-    printf("%s %s\n", array[0], array[1]);
-
     for (int i = 0; i < 2; i++) {
         free(array[i]);
     }

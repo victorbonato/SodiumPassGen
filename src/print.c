@@ -1,4 +1,4 @@
-#include "declarations.h"
+#include <declarations.h>
 
 // Quick function for printing dashes, making a line
 void printDashes(size_t amount) {

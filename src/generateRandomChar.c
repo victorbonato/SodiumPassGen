@@ -1,4 +1,4 @@
-#include "declarations.h"
+#include <declarations.h>
 
 // Generates a ramdom uint32_t value, and use it to choose among the possible characters provided 
 char generateRandomChar(char* chars){
